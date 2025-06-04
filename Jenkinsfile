@@ -26,7 +26,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId: 'kubeconfig']) {
                     sh 'sed -i "s/{{tag}}/$tag_version/g" ./k8s/deployment.yaml'
-                    sh '/mnt/c/Users/Roky/AppData/Local/Programs/Rancher Desktop/resources/resources/linux/bin/kubectl apply -f k8s/deployment.yaml'
+                    sh '"/mnt/c/Users/Roky/AppData/Local/Programs/Rancher Desktop/resources/resources/linux/bin/kubectl" apply -f k8s/deployment.yaml'
                 }
                 
             }
